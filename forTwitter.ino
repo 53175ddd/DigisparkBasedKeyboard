@@ -26,6 +26,7 @@ void loop() {
   if (Pin2_old_data == 1 && Pin2_new_data == 0){
     STT();
   }
+  DigiKeyboard.sendKeyStroke(0);
   delay(50);
 }
 
