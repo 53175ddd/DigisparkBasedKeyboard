@@ -22,8 +22,10 @@ void loop() {
   Pin0_old_data = Pin0_new_data;                                  //Move the number from old_data to new_data:
   Pin2_old_data = Pin2_new_data;
 
-  Pin0_new_data = digitalRead(0);                                 //read I/O pin and set the new_data:
+  Pin0_new_data = digitalRead(0);                                 //Read I/O pin and set the new_data:
   Pin2_new_data = digitalRead(2);                                 //0 = pressed, 1 = open:
+
+  DigiKeyboard.sendKeyStroke(0);                                  //Send dummy data:
   
   delay(50);
 }
