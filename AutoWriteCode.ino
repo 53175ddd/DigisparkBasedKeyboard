@@ -1,5 +1,8 @@
 #include <DigiKeyboard.h>
 
+char* Text_1 = "Replace this text";  //When you press SW1, keyboard types this text:
+char* Text_2 = "Replace this text";  //When you press SW2, keyboard types this text:
+
 byte Pin0_old_data = 1;
 byte Pin2_old_data = 1;
 byte Pin0_new_data = 1;
@@ -12,11 +15,11 @@ void setup() {
 
 void loop() {
   if (Pin0_old_data == 1 && Pin0_new_data == 0){                  //If pin pressed now and didn't pressed at last step:
-    DigiKeyboard.println(F("Text_1"));                            //Set the text. Replace "Text_1" to the other word what you want to use:
+    DigiKeyboard.println(Text_1);
   }
 
   if (Pin2_old_data == 1 && Pin2_new_data == 0){                  //If pin pressed now and didn't pressed at last step:
-    DigiKeyboard.println(F("Text_2"));                            //Set the text. Replace "Text_2" to the other word what you want to use:
+    DigiKeyboard.println(Text_2);
   }
 
   Pin0_old_data = Pin0_new_data;                                  //Move the number from old_data to new_data:
