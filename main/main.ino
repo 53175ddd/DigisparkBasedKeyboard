@@ -1,31 +1,51 @@
 #include <DigiKeyboard.h>
 
-byte Pin0_old_data = 1;
-byte Pin2_old_data = 1;
-byte Pin0_new_data = 1;
-byte Pin2_new_data = 1;
+//各スイッチが接続されているピンを定義:
+#define SW1 0
+#define SW2 2
+
+//各スイッチの状態を定義:
+#define Pressed  0
+#define Released 1
+
+//各スイッチを押したときに入力される文字列の長さを定義:
+#define Text1_long 17
+#define Text2_long 17
+
+//各スイッチを押したときに入力される文字列を定義, 上限は256文字:
+char Text1[Text1_long + 1] = "Replace This Text";
+char Text2[Text2_long + 1] = "Replace This Text";
+
+//下位4bitをスイッチの状態保存に割り当て:
+uint8_t dataBuffer = 0b00000000;
+uint8_t SW_Data    = 0b00001111;
 
 void setup() {
-  pinMode(0, INPUT);
-  pinMode(2, INPUT);
+  //接続ピンを入力に設定:
+  pinMode(SW1, INPUT);
+  pinMode(SW2, INPUT);
 }
 
 void loop() {
-  if (Pin0_old_data == 1 && Pin0_new_data == 0){                  //If pin pressed now and didn't pressed at last step:
-    DigiKeyboard.println(F("Text_1"));                            //Set the text. Replace "Text_1" to the other word what you want to use:
+  //条件に合致する場合キー入力を実行:
+  if((SW_Data　| 0b00001000) >> 3 == Released && (SW_Data　| 0b00000010) >> 1 == Pressed) {
+    for(uint8_t i = 0; i < Text1_long; i++){
+      DigiKeyboard.sendKeyStroke(Text1[i]);
+      delay(1);
+    }
+  }
+  if((SW_Data　| 0b00000100) >> 2 == Released && (SW_Data　| 0b00000001) >> 0 == Pressed) {
+    for(uint8_t i = 0; i < Text2_long; i++){
+      DigiKeyboard.sendKeyStroke(Text2[i]);
+      delay(1);
+    }
   }
 
-  if (Pin2_old_data == 1 && Pin2_new_data == 0){                  //If pin pressed now and didn't pressed at last step:
-    DigiKeyboard.println(F("Text_2"));                            //Set the text. Replace "Text_2" to the other word what you want to use:
-  }
+  SW_Data    = (SW_Data & 0b00000011) << 2;
+  dataBuffer = digitalRead(SW1) << 1;
+  SW_Data    = SW_Data | dataBuffer;
+  dataBuffer = digitalRead(SW2);
+  SW_Data    = SW_Data | dataBuffer;
 
-  Pin0_old_data = Pin0_new_data;                                  //Move the number from old_data to new_data:
-  Pin2_old_data = Pin2_new_data;
-
-  Pin0_new_data = digitalRead(0);                                 //Read I/O pin and set the new_data:
-  Pin2_new_data = digitalRead(2);                                 //0 = pressed, 1 = open:
-
-  DigiKeyboard.sendKeyStroke(0);                                  //Send dummy data:
-  
   delay(50);
 }
