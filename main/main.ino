@@ -1,51 +1,31 @@
 #include <DigiKeyboard.h>
 
-//各スイッチが接続されているピンを定義:
-#define SW1 0
-#define SW2 2
-
-//各スイッチの状態を定義:
-#define Pressed  0
-#define Released 1
-
-//各スイッチを押したときに入力される文字列の長さを定義:
-#define Text1_long 17
-#define Text2_long 17
-
-//各スイッチを押したときに入力される文字列を定義, 上限は256文字:
-char Text1[Text1_long + 1] = "Replace This Text";
-char Text2[Text2_long + 1] = "Replace This Text";
-
-//下位4bitをスイッチの状態保存に割り当て:
-uint8_t dataBuffer = 0b00000000;
-uint8_t SW_Data    = 0b00001111;
+byte Pin0_old_data = 1;
+byte Pin2_old_data = 1;
+byte Pin0_new_data = 1;
+byte Pin2_new_data = 1;
 
 void setup() {
-  //接続ピンを入力に設定:
-  pinMode(SW1, INPUT);
-  pinMode(SW2, INPUT);
+  pinMode(0, INPUT);
+  pinMode(2, INPUT);
 }
 
 void loop() {
-  //条件に合致する場合キー入力を実行:
-  if((SW_Data | 0b00001000) >> 3 == Released && (SW_Data | 0b00000010) >> 1 == Pressed) {
-    for(uint8_t i = 0; i < Text1_long; i++){
-      DigiKeyboard.sendKeyStroke(Text1[i]);
-      delay(1);
-    }
-  }
-  if((SW_Data | 0b00000100) >> 2 == Released && (SW_Data | 0b00000001) >> 0 == Pressed) {
-    for(uint8_t i = 0; i < Text2_long; i++){
-      DigiKeyboard.sendKeyStroke(Text2[i]);
-      delay(1);
-    }
+  if (Pin0_old_data == 1 && Pin0_new_data == 0){
+    DigiKeyboard.println(F("Text_1"));  //Replace Text_1 to your text:
   }
 
-  SW_Data    = (SW_Data & 0b00000011) << 2;
-  dataBuffer = digitalRead(SW1) << 1;
-  SW_Data    = SW_Data | dataBuffer;
-  dataBuffer = digitalRead(SW2);
-  SW_Data    = SW_Data | dataBuffer;
+  if (Pin2_old_data == 1 && Pin2_new_data == 0){
+    DigiKeyboard.println(F("Text_2"));  //Replace Text_2 to your text:
+  }
+
+  Pin0_old_data = Pin0_new_data;
+  Pin2_old_data = Pin2_new_data;
+
+  Pin0_new_data = digitalRead(0);   
+  Pin2_new_data = digitalRead(2); 
+
+  DigiKeyboard.sendKeyStroke(0);
 
   delay(50);
 }
