@@ -28,13 +28,13 @@ void setup() {
 
 void loop() {
   //条件に合致する場合キー入力を実行:
-  if((SW_Data　| 0b00001000) >> 3 == Released && (SW_Data　| 0b00000010) >> 1 == Pressed) {
+  if((SW_Data | 0b00001000) >> 3 == Released && (SW_Data | 0b00000010) >> 1 == Pressed) {
     for(uint8_t i = 0; i < Text1_long; i++){
       DigiKeyboard.sendKeyStroke(Text1[i]);
       delay(1);
     }
   }
-  if((SW_Data　| 0b00000100) >> 2 == Released && (SW_Data　| 0b00000001) >> 0 == Pressed) {
+  if((SW_Data | 0b00000100) >> 2 == Released && (SW_Data | 0b00000001) >> 0 == Pressed) {
     for(uint8_t i = 0; i < Text2_long; i++){
       DigiKeyboard.sendKeyStroke(Text2[i]);
       delay(1);
