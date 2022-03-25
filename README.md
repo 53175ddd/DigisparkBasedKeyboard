@@ -1,6 +1,6 @@
 # DigisparkBasedKeyboard について
 
-## ディレクトリについて
+## ディレクトリ構造
 
 - archives
   - 過去バージョンのファームウェアを保存しています
