@@ -1,31 +1,36 @@
 #include <DigiKeyboard.h>
 
-byte Pin0_old_data = 1;
-byte Pin2_old_data = 1;
-byte Pin0_new_data = 1;
-byte Pin2_new_data = 1;
+//押されている状態、放されている状態での入力ピンの状態を定義:
+#define Pressed  0
+#define Released 1
+
+//各スイッチが接続されているピンをスイッチ名として定義:
+#define SW1 0
+#define SW2 2
+
+//ピンの状態を保存する変数を定義:
+uint8_t stat = 0b11111111;
 
 void setup() {
-  pinMode(0, INPUT);
-  pinMode(2, INPUT);
+  //各スイッチに接続されているピンを入力に設定:
+  pinMode(SW1, INPUT);
+  pinMode(SW2, INPUT);
 }
 
 void loop() {
-  if (Pin0_old_data == 1 && Pin0_new_data == 0){
-    DigiKeyboard.println(F("Text_1"));
+  //データをシフトしつつ代入して更新:
+  stat = stat << 1;
+  stat = stat + digitalRead(SW1);
+  stat = stat << 1;
+  stat = stat + digitalRead(SW2);
+
+  //スイッチが押された瞬間の処理:
+  if(stat & 0b00001010 == 0b00001000){
+    DigiKeyboard.print("Text_1");
   }
-
-  if (Pin2_old_data == 1 && Pin2_new_data == 0){
-    DigiKeyboard.println(F("Text_2"));
+  if(stat & 0b00000101 == 0b00000100){
+    DigiKeyboard.print("Text_2");
   }
-
-  Pin0_old_data = Pin0_new_data;
-  Pin2_old_data = Pin2_new_data;
-
-  Pin0_new_data = digitalRead(0);   
-  Pin2_new_data = digitalRead(2); 
-
-  DigiKeyboard.sendKeyStroke(0);
 
   delay(50);
 }
