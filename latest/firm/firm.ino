@@ -1,9 +1,9 @@
 #include <DigiKeyboard.h>
 
-byte Pin0_old_data = 1;
-byte Pin2_old_data = 1;
-byte Pin0_new_data = 1;
-byte Pin2_new_data = 1;
+uint8_t Pin0_old_data = 1;
+uint8_t Pin2_old_data = 1;
+uint8_t Pin0_new_data = 1;
+uint8_t Pin2_new_data = 1;
 
 void setup() {
   pinMode(0, INPUT);
