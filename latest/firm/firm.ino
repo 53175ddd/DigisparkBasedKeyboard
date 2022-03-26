@@ -1,29 +1,35 @@
 #include <DigiKeyboard.h>
 
-uint8_t Pin0_old_data = 1;
-uint8_t Pin2_old_data = 1;
-uint8_t Pin0_new_data = 1;
-uint8_t Pin2_new_data = 1;
+#define SW1 0
+#define SW2 2
+
+#define PULLUP
+
+#ifdef PULLUP
+ #define Pressed  0
+ #define Released 1
+#else
+ #define Pressed  1
+ #define Released 0
+#endif
+
+uint8_t pinStat = 0b11111111 * Released;
 
 void setup() {
-  pinMode(0, INPUT);
-  pinMode(2, INPUT);
+  pinMode(SW1, INPUT);
+  pinMode(SW2, INPUT);
 }
 
 void loop() {
-  if (Pin0_old_data == 1 && Pin0_new_data == 0){
-    DigiKeyboard.println(F("Text_1"));
+  pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
+  
+  if ((pinStat & 0b00001010) == 0b00001000){
+    DigiKeyboard.println("Text_1");
   }
 
-  if (Pin2_old_data == 1 && Pin2_new_data == 0){
-    DigiKeyboard.println(F("Text_2"));
+  if ((pinStat & 0b00000101) == 0b00000100){
+    DigiKeyboard.println("Text_2");
   }
-
-  Pin0_old_data = Pin0_new_data;
-  Pin2_old_data = Pin2_new_data;
-
-  Pin0_new_data = digitalRead(0);   
-  Pin2_new_data = digitalRead(2); 
 
   DigiKeyboard.sendKeyStroke(0);
 
