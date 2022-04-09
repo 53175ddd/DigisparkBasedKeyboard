@@ -1,5 +1,6 @@
 # DigisparkBasedKeyboard について
 
+![](https://s2.booth.pm/9e9f8732-63c1-40af-8dce-9f3f849a0641/i/3342532/3e789ed9-e795-4617-9c9d-abfac0a62aef_base_resized.jpg)
 [販売ページ](https://nch-mosfet.booth.pm/items/3342532)
 
 ## ディレクトリ構造
