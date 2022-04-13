@@ -1,3 +1,21 @@
+/*
+ * このファームウェアはVer.1.2です
+ * 最新版はこちらのリンクからどうぞ↓
+ * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/edit/main/latest/firm/firm.ino
+ * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
+ * また、このコードをもとにご自身で機能拡張をしていただいても構いません。ご自由にご利用ください
+ * その際、変更したコードを公開しても良いという場合、本コードを公開しているリポジトリ(https://github.com/Nch-MOSFET/DigisparkBasedKeyboard)
+ * にて公開させていただきたいのでご連絡をいただければ幸いです。TwitterのDM(@Nch_MOSFET)またはGitHubのプルリクエストという形でお願いします
+ * コードの訂正・最適化等はプルリクエストにてお願いします。こちらで検証の上問題がなければ採用いたします
+ */
+
+//この下にある波括弧とダブルクオーテーションの中の文字列を変更して使用してください:
+uint8_t Text_1[] = {"Text_1"};
+uint8_t Text_2[] = {"Text_2"};
+
+//自動で改行させたい場合は下の行をコメント解除して下さい:
+//#define ENDENTER_TRUE
+
 #include <DigiKeyboard.h>
 
 #define SW1 0
@@ -22,13 +40,19 @@ void setup() {
 
 void loop() {
   pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
-  
-  if ((pinStat & 0b00001010) == 0b00001000){
-    DigiKeyboard.println("Text_1");
-  }
 
+  if ((pinStat & 0b00001010) == 0b00001000){
+    for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
+      DigiKeyboard.print(Text_1[i]);
+    }
+  } else
   if ((pinStat & 0b00000101) == 0b00000100){
-    DigiKeyboard.println("Text_2");
+    for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
+      DigiKeyboard.print(Text_2[i]);
+    }
+#ifdef ENDENTER_TRUE
+    DigiKeyboard.println();
+#endif
   }
 
   DigiKeyboard.sendKeyStroke(0);
