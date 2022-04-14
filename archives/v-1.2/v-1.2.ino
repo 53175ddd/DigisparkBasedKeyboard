@@ -34,7 +34,11 @@ void loop() {
     for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
       DigiKeyboard.print(Text_1[i]);
     }
-  } else
+#ifdef ENDENTER_TRUE
+    DigiKeyboard.println();
+#endif
+  }
+  
   if ((pinStat & 0b00000101) == 0b00000100){
     for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
       DigiKeyboard.print(Text_2[i]);
