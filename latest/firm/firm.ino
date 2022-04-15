@@ -1,5 +1,5 @@
 /*
- * このファームウェアはVer.1.2です
+ * このファームウェアはVer.1.3です
  * 最新版はこちらのリンクからどうぞ↓
  * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/edit/main/latest/firm/firm.ino
  * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
@@ -61,5 +61,5 @@ void loop() {
 
   DigiKeyboard.sendKeyStroke(0);
 
-  delay(50);
+  DigiKeyboard.delay(50);
 }
