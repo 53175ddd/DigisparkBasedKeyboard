@@ -1,5 +1,5 @@
 /*
- * このファームウェアはVer.1.3です
+ * このファームウェアはVer.1.4です
  * 最新版はこちらのリンクからどうぞ↓
  * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/edit/main/latest/firm/firm.ino
  * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
@@ -42,8 +42,11 @@ void loop() {
   pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
 
   if ((pinStat & 0b00001010) == 0b00001000){
-    for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
-      DigiKeyboard.print(Text_1[i]);
+    delay(5);
+    if(digitalRead(SW1) == Pressed){
+      for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
+        DigiKeyboard.print(Text_1[i]);
+      }
     }
 #ifdef ENDENTER_TRUE
     DigiKeyboard.println();
@@ -51,8 +54,11 @@ void loop() {
   }
   
   if ((pinStat & 0b00000101) == 0b00000100){
-    for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
-      DigiKeyboard.print(Text_2[i]);
+    delay(5);
+    if(digitalRead(SW2) == Pressed){
+      for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
+        DigiKeyboard.print(Text_2[i]);
+      }
     }
 #ifdef ENDENTER_TRUE
     DigiKeyboard.println();
