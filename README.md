@@ -5,13 +5,13 @@
 
 ## ディレクトリ構造
 
-- archives
+- [archives](./archives)
   - 過去バージョンのファームウェアを保存しています
-- bootloader
+- [bootloader](./bootloader)
   - 使用しているブートローダのデータです
-- latest
+- [latest](./latest)
   - 最新版ファームウェアはこちら
-- ordered
+- [ordered](./ordered)
   - 依頼を頂いたものに関するコードはこちら
 
 ## ハードウェア仕様
