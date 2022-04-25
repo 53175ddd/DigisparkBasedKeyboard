@@ -1,5 +1,5 @@
 /*
- * このファームウェアはVer.1.5です
+ * このファームウェアはVer.1.5.1です
  * 最新版はこちらのリンクからどうぞ↓
  * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/edit/main/latest/firm/firm.ino
  * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
@@ -15,6 +15,8 @@ char Text_2[] = {"Text_2"};
 
 //自動で改行させたい場合は下の行をコメント解除して下さい:
 //#define ENDENTER_TRUE
+
+//----------------ここから下は変更不要----------------:
 
 #include <DigiKeyboard.h>
 
