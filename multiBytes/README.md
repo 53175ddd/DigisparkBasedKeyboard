@@ -10,7 +10,7 @@ Google日本語入力が必要になります。[こちら](https://www.google.c
 
 ## ファームウェアの使用方法
 
-ほとんど[元々のファームウェア](./../firm/firm.ino)と変わりません。具体的には以下の通りです
+ほとんど[元々のファームウェア](./../../firm/firm.ino)と変わりません。具体的には以下の通りです
 
 ①[ファームウェア](./multiBytes.ino)をArduino IDEにコピペし、コード内のコメントに従って必要な箇所を変更してください  
 ②`ツール` -> `ボード` -> `Digistamp AVR Boards` -> `Digispark (Default - 16.5mhz)` と進んでボードを変更します。`#include <DigiKeyboard.h>` の中の`Digikeyboard` がオレンジ色になっていれば問題なくボードが選択されています  
