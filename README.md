@@ -27,4 +27,4 @@ PCに接続する際は金色の端子が4本並んでいるところをUSB-A端
 `digitalRead();` 関数を用いて各スイッチの状態を取得し、一つ前のデータと比較して「押された瞬間」にそのスイッチに割り当てられている文字列を`DigiKeyboard.print();` 関数で出力します  
 PC側に`Google 日本語入力` を導入することでマルチバイト文字まで拡張することも可能です  
 
-<div align="right">CC BY-NC 3.0</div>
+<div align="right"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a></div>
