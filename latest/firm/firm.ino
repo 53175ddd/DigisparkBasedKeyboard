@@ -1,5 +1,5 @@
 /*
- * このファームウェアはVer.1.5.1です
+ * このファームウェアはVer.1.6です
  * 最新版はこちらのリンクからどうぞ↓
  * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/edit/main/latest/firm/firm.ino
  * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
@@ -9,9 +9,9 @@
  * コードの訂正・最適化等はプルリクエストにてお願いします。こちらで検証の上問題がなければ採用いたします
  */
 
-//この下にある波括弧とダブルクオーテーションの中の文字列を変更して使用してください:
-char Text_1[] = {"Text_1"};
-char Text_2[] = {"Text_2"};
+//この下にあるダブルクオーテーション "" の中の文字列を変更して使用してください:
+char Text_1[] = "Text_1";
+char Text_2[] = "Text_1";
 
 //自動で改行させたい場合は下の行をコメント解除して下さい:
 //#define ENDENTER_TRUE
@@ -43,25 +43,38 @@ void setup() {
 void loop() {
   pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
 
-  if ((pinStat & 0b10101010) == 0b10000000){
-    for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
-      DigiKeyboard.print(Text_1[i]);
-    }
-#ifdef ENDENTER_TRUE
-    DigiKeyboard.println();
-#endif
+  if ((pinStat & 0b10101010) == 0b10100000){
+    keyOut(0);
   }
   
-  if ((pinStat & 0b01010101) == 0b01000000){
-    for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
-      DigiKeyboard.print(Text_2[i]);
-    }
-#ifdef ENDENTER_TRUE
-    DigiKeyboard.println();
-#endif
+  if ((pinStat & 0b01010101) == 0b01010000){
+    keyOut(1);
   }
 
-  DigiKeyboard.sendKeyStroke(0);
-
   DigiKeyboard.delay(10);
+}
+
+void keyOut(uint8_t type) {
+  if(type == 0) {
+    DigiKeyboard.sendKeyStroke(0);
+    DigiKeyboard.delay(5);
+    for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
+      DigiKeyboard.print(Text_1[i]);
+      DigiKeyboard.delay(1);
+    }
+  }
+
+  if(type == 1) {
+    DigiKeyboard.sendKeyStroke(0);
+    DigiKeyboard.delay(5);
+    for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
+      DigiKeyboard.print(Text_2[i]);
+      DigiKeyboard.delay(1);
+    }
+  }
+  
+#ifdef ENDENTER_TRUE
+  DigiKeyboard.delay(5);
+  DigiKeyboard.println();
+#endif
 }
