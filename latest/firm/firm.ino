@@ -11,7 +11,7 @@
 
 //この下にあるダブルクオーテーション "" の中の文字列を変更して使用してください:
 char Text_1[] = "Text_1";
-char Text_2[] = "Text_1";
+char Text_2[] = "Text_2";
 
 //自動で改行させたい場合は下の行をコメント解除して下さい:
 //#define ENDENTER_TRUE
