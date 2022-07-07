@@ -7,8 +7,6 @@
 
 - [Firmware](./Firmware)
   - 最新版ファームウェアはこちら
-- [archives](./archives)
-  - 過去バージョンのファームウェアを保存しています
 - [bootloader](./bootloader)
   - 使用しているブートローダのデータです
 - [multiBytes](./multiBytes)
