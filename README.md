@@ -5,12 +5,12 @@
 
 ## ディレクトリ構造
 
+- [Firmware](./Firmware)
+  - 最新版ファームウェアはこちら
 - [archives](./archives)
   - 過去バージョンのファームウェアを保存しています
 - [bootloader](./bootloader)
   - 使用しているブートローダのデータです
-- [latest](./latest)
-  - 最新版ファームウェアはこちら
 - [multiBytes](./multiBytes)
   - マルチバイト文字（ひらがな、カタカナ、漢字等）対応バージョンです。[README.md](./multiBytes/README.md)を良くお読みの上でご使用下さい
 - [ordered](./ordered)
