@@ -22,11 +22,11 @@
 本キーボードはArduino IDEでファームウェアの更新を行うことができます。言い換えれば、ファームウェアの更新にArduino IDEが必要なためそれをインストールする必要があります  
 [こちらのリンク](https://www.arduino.cc/en/software)を開き、「Downloads」の項目右側、「DOWNLOAD OPTIONS」の中からそれぞれの環境に合うものを選択します。ここでは「Windows ZIP file」を選択しています
 
-<img src="./img/Arduino_IDE_Install_01.png" width="75%">
+<div align="center"><img src="./img/Arduino_IDE_Install_01.png" width="75%"></div>
 
 すると以下のページに飛びます。「JUST DOWNLOAD」をクリックするとZIPファイルがダウンロードされます
 
-<img src="./img/Arduino_IDE_Install_02.png" width="75%">
+<div align="center"><img src="./img/Arduino_IDE_Install_02.png" width="75%"></div>
 
 ## ボードマネージャの追加
 
