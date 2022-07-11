@@ -23,11 +23,11 @@
 
 [こちらのリンク](https://www.arduino.cc/en/software)を開き、「Downloads」の項目の右側の濃い緑色の部分にある「DOWNLOAD OPTIONS」の中からそれぞれの環境に合うものを選択します。ここでは「Windows ZIP file」を選択しています
 
-<div align="center"><img src="./img/01.png" width="75%"></div>
+<div align="center"><img src="./img/01.png" width="75%" border=4></div>
 
 すると以下のページに飛びます。「JUST DOWNLOAD」をクリックするとZIPファイルがダウンロードされます
 
-<div align="center"><img src="./img/02.png" width="75%"></div>
+<div align="center"><img src="./img/02.png" width="75%" border=4></div>
 
 ## ボードマネージャの追加
 
