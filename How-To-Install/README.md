@@ -19,8 +19,9 @@
 
 ## Arduino IDE（開発環境）のインストール
 
-本キーボードはArduino IDEでファームウェアの更新を行うことができます。言い換えれば、ファームウェアの更新にArduino IDEが必要なためそれをインストールする必要があります  
-[こちらのリンク](https://www.arduino.cc/en/software)を開き、「Downloads」の項目右側、「DOWNLOAD OPTIONS」の中からそれぞれの環境に合うものを選択します。ここでは「Windows ZIP file」を選択しています
+本キーボードはArduino IDEでファームウェアの更新を行うことができます。言い換えれば、ファームウェアの更新にArduino IDEが必要なためそれをインストールする必要があります
+
+[こちらのリンク](https://www.arduino.cc/en/software)を開き、「Downloads」の項目の右側の濃い緑色の部分にある「DOWNLOAD OPTIONS」の中からそれぞれの環境に合うものを選択します。ここでは「Windows ZIP file」を選択しています
 
 <div align="center"><img src="./img/01.png" width="75%"></div>
 
