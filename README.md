@@ -10,6 +10,8 @@
 
 - [Firmware](./Firmware)
   - 最新版ファームウェアはこちら
+- [How-To-Install](./How-To-Install)
+  - ファームウェアの更新方法を開発環境をインストールするところから記載しています
 - [bootloader](./bootloader)
   - 使用しているブートローダのデータです
 - [multiBytes](./multiBytes)
