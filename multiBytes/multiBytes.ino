@@ -1,7 +1,7 @@
 /*
- * このファームウェアはマルチバイト対応版です
+ * このファームウェアはマルチバイト対応版v-1.0です
  * 最新版はこちらのリンクからどうぞ↓
- * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/edit/main/latest/firm/firm.ino
+ * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/blob/main/multiBytes/multiBytes.ino
  * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
  * また、このコードをもとにご自身で機能拡張をしていただいても構いません。ご自由にご利用ください
  * その際、変更したコードを公開しても良いという場合、本コードを公開しているリポジトリ(https://github.com/Nch-MOSFET/DigisparkBasedKeyboard)
