@@ -16,7 +16,7 @@ uint16_t Text_1[] = {};
 uint16_t Text_2[] = {};
 
 //Pro Microを使用する場合はコメント解除してください。Digisparkを使用する場合はこのままで大丈夫です
-#define Pro_Micro
+//#define Pro_Micro
 
 // 自動で改行させたい場合は下の行をコメント解除してください
 //#define EndEnter_True
