@@ -1,3 +1,14 @@
+/*
+ * このファームウェアはVer.1.6です
+ * 最新版はこちらのリンクからどうぞ↓
+ * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/blob/main/latest/firm/firm.ino
+ * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
+ * また、このコードをもとにご自身で機能拡張をしていただいても構いません。ご自由にご利用ください
+ * その際、変更したコードを公開しても良いという場合、本コードを公開しているリポジトリ(https://github.com/Nch-MOSFET/DigisparkBasedKeyboard)
+ * にて公開させていただきたいのでご連絡をいただければ幸いです。TwitterのDM(@Nch_MOSFET)またはGitHubのプルリクエストという形でお願いします
+ * コードの訂正・最適化等はプルリクエストにてお願いします。こちらで検証の上問題がなければ採用いたします
+ */
+
 //この下にあるダブルクオーテーション "" の中の文字列を変更して使用してください:
 char Text_1[] = "Text_1";
 char Text_2[] = "Text_2";
@@ -49,7 +60,7 @@ void loop() {
 
   toggleDigitalWrite();
 
-  DigiKeyboard.delay(250);
+  DigiKeyboard.delay(50);
 }
 
 void keyOut(uint8_t type) {
@@ -80,8 +91,6 @@ void keyOut(uint8_t type) {
 void toggleDigitalWrite() {
   digitalWrite(LED1, (internalCounter & 0b10) >> 1);
   digitalWrite(LED2, (internalCounter & 0b01));
-
-  DigiKeyboard.println(internalCounter);
 
   internalCounter++;
 }
