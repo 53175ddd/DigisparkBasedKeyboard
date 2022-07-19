@@ -1,8 +1,19 @@
+//この下にあるダブルクオーテーション "" の中の文字列を変更して使用してください:
+char Text_1[] = "Text_1";
+char Text_2[] = "Text_2";
+
+//自動で改行させたい場合は下の行をコメント解除して下さい:
+//#define ENDENTER_TRUE
+
+//----------------ここから下は変更不要----------------:
+
 #include <DigiKeyboard.h>
 
 #define SW1 0
 #define SW2 2
-#define led 1
+
+#define LED1 1
+#define LED2 5
 
 #define PULLUP
 
@@ -15,31 +26,62 @@
 #endif
 
 uint8_t pinStat = 0b11111111 * Released;
+uint8_t internalCounter = 0;
 
 void setup() {
-  pinMode(SW1,  INPUT);
-  pinMode(SW2,  INPUT);
-  pinMode(led, OUTPUT);
+  pinMode(SW1, INPUT);
+  pinMode(SW2, INPUT);
+
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
 }
 
 void loop() {
   pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
+
+  if ((pinStat & 0b10101010) == 0b10100000){
+    keyOut(0);
+  }
   
-  if((pinStat & 0b00001010) == 0b00001000){
-    DigiKeyboard.println("Text_1");
+  if ((pinStat & 0b01010101) == 0b01010000){
+    keyOut(1);
   }
 
-  if((pinStat & 0b00000101) == 0b00000100){
-    DigiKeyboard.println("Text_2");
-  }
-  if((pinStat & 0b00000010) == 0b00000000){
-    digitalWrite(led, HIGH);
-  }
-  if((pinStat & 0b00000001) == 0b00000000){
-    digitalWrite(led,  LOW);
+  toggleDigitalWrite();
+
+  DigiKeyboard.delay(250);
+}
+
+void keyOut(uint8_t type) {
+  if(type == 0) {
+    DigiKeyboard.sendKeyStroke(0);
+    DigiKeyboard.delay(5);
+    for (uint8_t i = 0; i < sizeof(Text_1) - 1; i++) {
+      DigiKeyboard.print(Text_1[i]);
+      DigiKeyboard.delay(1);
+    }
   }
 
-  DigiKeyboard.sendKeyStroke(0);
+  if(type == 1) {
+    DigiKeyboard.sendKeyStroke(0);
+    DigiKeyboard.delay(5);
+    for (uint8_t i = 0; i < sizeof(Text_2) - 1; i++) {
+      DigiKeyboard.print(Text_2[i]);
+      DigiKeyboard.delay(1);
+    }
+  }
+  
+#ifdef ENDENTER_TRUE
+  DigiKeyboard.delay(5);
+  DigiKeyboard.println();
+#endif
+}
 
-  delay(50);
+void toggleDigitalWrite() {
+  digitalWrite(LED1, (internalCounter & 0b10) >> 1);
+  digitalWrite(LED2, (internalCounter & 0b01));
+
+  DigiKeyboard.println(internalCounter);
+
+  internalCounter++;
 }
