@@ -1,5 +1,5 @@
 /*
- * このファームウェアはVer.1.6です
+ * このファームウェアはVer.1.7です
  * 最新版はこちらのリンクからどうぞ↓
  * https://github.com/Nch-MOSFET/DigisparkBasedKeyboard/blob/main/Firmware/Firmware.ino
  * 変更があり次第公開していきますが、動作に問題がない場合書き換える必要はありません。
@@ -41,7 +41,12 @@ void setup() {
 }
 
 void loop() {
-  pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
+  mainRoutine();
+  DigiKeyboard.delay(25);
+}
+
+void mainRutine() {
+ pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
 
   if ((pinStat & 0b10101010) == 0b10100000){
     keyOut(0);
@@ -50,8 +55,6 @@ void loop() {
   if ((pinStat & 0b01010101) == 0b01010000){
     keyOut(1);
   }
-
-  DigiKeyboard.delay(10);
 }
 
 void keyOut(uint8_t type) {
