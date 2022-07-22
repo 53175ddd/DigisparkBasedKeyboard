@@ -16,6 +16,8 @@
   - 使用しているブートローダのデータです
 - [multiBytes](./multiBytes)
   - マルチバイト文字（ひらがな、カタカナ、漢字等）対応バージョンです。[README.md](./multiBytes/README.md)を良くお読みの上でご使用下さい
+- [ordered](./ordered)
+  - 依頼を頂いたものに関するコードはこちら
 
 ## ハードウェア仕様
 
