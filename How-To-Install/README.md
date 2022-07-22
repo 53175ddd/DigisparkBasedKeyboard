@@ -1,6 +1,6 @@
 # DigiKeyboardのファームウェア変更方法
 
-<h3><div align="right">最終更新：2022/07/20</div></h3>
+<h3><div align="right">最終更新：2022/07/23</div></h3>
 
 このドキュメントではBoothで販売中の自作キーボード、「DigiKeyboard」（DigisparkBasedKeyboard）のファームウェアを変更する方法を説明しています。長いので以後本キーボードとします  
 不明点・誤字・質問等ございましたらDMにてお寄せ下さい。こちらからどうぞ→[DMリンク](https://www.twitter.com/messages/compose?recipient_id=1358261719701721088)
