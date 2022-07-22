@@ -30,25 +30,25 @@
 
 <div align="center"><img src="./img/02.png" width="75%" border=4></div>
 
-Explorerからダウンロードフォルダを開くと、｛arduino-1.8.19-windows.zip｝のようなものがダウンロードされているはずですのでこれを展開します。おすすめは分かりやすいフォルダに展開することです。今回はデスクトップに展開します
+Explorerからダウンロードフォルダを開くと、[arduino-1.8.19-windows.zip]のようなものがダウンロードされているはずですのでこれを展開します。おすすめは分かりやすいフォルダに展開することです。今回はデスクトップに展開します
 
 <div align="center"><img src="./img/03.png" width="75%" border=4></div>
 
-<div align="center"><img src="./img/04.png" width="75%" border=4></div>
-
 展開先を`C:\Users\User\Desktop\Arduino`にするとデスクトップのArduinoというフォルダに展開されるようになります。`User`の部分はお使いのPCで使用しているユーザーネームですので各自読み替えてお進みください
 
-<div align="center"><img src="./img/05.png" width="75%" border=4></div>
+<div align="center"><img src="./img/04.png" width="75%" border=4></div>
 
 開くとこのようになっていると思います。このままだとファイル階層が無駄に深くなってしまっているのですべて選択して切り取り（ctrl + X）し、一つ上のフォルダにペースト（ctrl + V）するなどして移動させます
 
-<div align="center"><img src="./img/06.png" width="75%" border=4></div>
+<div align="center"><img src="./img/05.png" width="75%" border=4></div>
 
 あるいはこのようにすべて選択してドラッグ＆ドラッグでも可能です
 
-<div align="center"><img src="./img/07.png" width="75%" border=4></div>
+<div align="center"><img src="./img/06.png" width="75%" border=4></div>
 
 移動後はこうなっていると思います。選択され青くハイライトされているフォルダは空になっているはずです。不要なので削除してしまって構いません（むしろ削除することをおすすめします）
+
+<div align="center"><img src="./img/07.png" width="75%" border=4></div>
 
 Arduino IDEの導入はこれで終わりです  
 インストール形式ではないため不要になった場合はフォルダごと削除するだけで完了します。また、PCを買い替えた場合でもこのフォルダをコピーするだけで問題ありませんが、後述するドライバはインストール形式のため都度インストールする必要があります
@@ -81,21 +81,21 @@ http://digistump.com/package_digistump_index.json
 
 [OK]を押して閉じます
 
-<div align="center"><img src="./img/13.png" width="75%" border=4></div>
-
 [ツール]->[ボード]->[ボードマネージャ]と進んでボードマネージャを開き、
 
-<div align="center"><img src="./img/14.png" width="75%" border=4></div>
+<div align="center"><img src="./img/13.png" width="75%" border=4></div>
 
 出てきたウィンドウの検索欄に「Digispark」と入力し、出てきたものをインストールします
 
-<div align="center"><img src="./img/15.png" width="75%" border=4></div>
+<div align="center"><img src="./img/14.png" width="75%" border=4></div>
 
 [INSTALLED]と出ればインストール完了です
 
-<div align="center"><img src="./img/16.png" width="75%" border=4></div>
+<div align="center"><img src="./img/15.png" width="75%" border=4></div>
 
 [ツール]->[ボード]->[Digistump AVR Boards]->[Digispark (Default - 16.5mhz)]を選択できればボードマネージャのインストールは終わりです。IDEは終了して構いません
+
+<div align="center"><img src="./img/16.png" width="75%" border=4></div>
 
 ## ドライバのインストール
 
