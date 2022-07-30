@@ -24,31 +24,31 @@
 
 [こちらのリンク](https://www.arduino.cc/en/software)を開き、「Downloads」の項目の右側の濃い緑色の部分にある「DOWNLOAD OPTIONS」の中からそれぞれの環境に合うものを選択します。ここでは「Windows ZIP file」を選択しています
 
-<div align="center"><img src="./img/01.png" width="75%" border=4></div>
+<div align="center"><img src="./img/01.png" width="100%" border=4></div>
 
 すると以下のページに飛びます。「JUST DOWNLOAD」をクリックするとZIPファイルがダウンロードされます
 
-<div align="center"><img src="./img/02.png" width="75%" border=4></div>
+<div align="center"><img src="./img/02.png" width="100%" border=4></div>
 
 Explorerからダウンロードフォルダを開くと、[arduino-1.8.19-windows.zip]のようなものがダウンロードされているはずですのでこれを展開します。おすすめは分かりやすいフォルダに展開することです。今回はデスクトップに展開します
 
-<div align="center"><img src="./img/03.png" width="75%" border=4></div>
+<div align="center"><img src="./img/03.png" width="100%" border=4></div>
 
 展開先を`C:\Users\User\Desktop\Arduino`にするとデスクトップのArduinoというフォルダに展開されるようになります。`User`の部分はお使いのPCで使用しているユーザーネームですので各自読み替えてお進みください
 
-<div align="center"><img src="./img/04.png" width="75%" border=4></div>
+<div align="center"><img src="./img/04.png" width="100%" border=4></div>
 
 開くとこのようになっていると思います。このままだとファイル階層が無駄に深くなってしまっているのですべて選択して切り取り（ctrl + X）し、一つ上のフォルダにペースト（ctrl + V）するなどして移動させます
 
-<div align="center"><img src="./img/05.png" width="75%" border=4></div>
+<div align="center"><img src="./img/05.png" width="100%" border=4></div>
 
 あるいはこのようにすべて選択してドラッグ＆ドラッグでも可能です
 
-<div align="center"><img src="./img/06.png" width="75%" border=4></div>
+<div align="center"><img src="./img/06.png" width="100%" border=4></div>
 
 移動後はこうなっていると思います。選択され青くハイライトされているフォルダは空になっているはずです。不要なので削除してしまって構いません（むしろ削除することをおすすめします）
 
-<div align="center"><img src="./img/07.png" width="75%" border=4></div>
+<div align="center"><img src="./img/07.png" width="100%" border=4></div>
 
 Arduino IDEの導入はこれで終わりです  
 インストール形式ではないため不要になった場合はフォルダごと削除するだけで完了します。また、PCを買い替えた場合でもこのフォルダをコピーするだけで問題ありませんが、後述するドライバはインストール形式のため都度インストールする必要があります
@@ -57,19 +57,19 @@ Arduino IDEの導入はこれで終わりです
 
 続いてボードマネージャを追加します
 
-<div align="center"><img src="./img/08.png" width="75%" border=4></div>
+<div align="center"><img src="./img/08.png" width="100%" border=4></div>
 
 `arduino.exe`を起動してください。`.exe`（拡張子）が表示されていない場合はエクスプローラ上部のタブの「表示」を開き、赤線を引いた項目にチェックを入れてください
 
-<div align="center"><img src="./img/09.png" width="75%" border=4></div>
+<div align="center"><img src="./img/09.png" width="100%" border=4></div>
 
 IDEを起動すると、このような画面が出てきます
 
-<div align="center"><img src="./img/10.png" width="75%" border=4></div>
+<div align="center"><img src="./img/10.png" width="100%" border=4></div>
 
 [ファイル]タブから環境設定を開き、
 
-<div align="center"><img src="./img/11.png" width="75%" border=4></div>
+<div align="center"><img src="./img/11.png" width="100%" border=4></div>
 
 「追加のボードマネージャのURL」の項目（赤線部分）に以下のリンクをコピペしてください
 
@@ -77,36 +77,36 @@ IDEを起動すると、このような画面が出てきます
 http://digistump.com/package_digistump_index.json
 ```
 
-<div align="center"><img src="./img/12.png" width="75%" border=4></div>
+<div align="center"><img src="./img/12.png" width="100%" border=4></div>
 
 [OK]を押して閉じます
 
 [ツール]->[ボード]->[ボードマネージャ]と進んでボードマネージャを開き、
 
-<div align="center"><img src="./img/13.png" width="75%" border=4></div>
+<div align="center"><img src="./img/13.png" width="100%" border=4></div>
 
 出てきたウィンドウの検索欄に「Digispark」と入力し、出てきたものをインストールします
 
-<div align="center"><img src="./img/14.png" width="75%" border=4></div>
+<div align="center"><img src="./img/14.png" width="100%" border=4></div>
 
 [INSTALLED]と出ればインストール完了です
 
-<div align="center"><img src="./img/15.png" width="75%" border=4></div>
+<div align="center"><img src="./img/15.png" width="100%" border=4></div>
 
 [ツール]->[ボード]->[Digistump AVR Boards]->[Digispark (Default - 16.5mhz)]を選択できればボードマネージャのインストールは終わりです。IDEは終了して構いません
 
-<div align="center"><img src="./img/16.png" width="75%" border=4></div>
+<div align="center"><img src="./img/16.png" width="100%" border=4></div>
 
 ## ドライバのインストール
 
 [https://github.com/digistump/DigistumpArduino/raw/master/tools/micronucleus-2.0a4-win.zip](https://github.com/digistump/DigistumpArduino/raw/master/tools/micronucleus-2.0a4-win.zip)からzipファイルをダウンロードし、同様の手順で展開し、ファイル場所を移動させます  
 展開先は[/Desktop/Arduino/Driver]にしています
 
-<div align="center"><img src="./img/17.png" width="75%" border=4></div>
+<div align="center"><img src="./img/17.png" width="100%" border=4></div>
 
-<div align="center"><img src="./img/18.png" width="75%" border=4></div>
+<div align="center"><img src="./img/18.png" width="100%" border=4></div>
 
-<div align="center"><img src="./img/19.png" width="75%" border=4></div>
+<div align="center"><img src="./img/19.png" width="100%" border=4></div>
 
 次に、[DPinst64.exe]を起動します。32bit環境の場合はその上の[DPinst.exe]を起動してください
 
@@ -129,7 +129,7 @@ Arduino IDEを再度起動し、再び[ファイル]タブから環境設定を�
 続いて、[Firmware.ino](./../../Firmware/Firmware.ino)の中身をすべてコピペします。お好みの名前で保存しておきましょう
 また、赤線で示した部分、21行目がオレンジ色になっていることを確認してください
 
-<div align="center"><img src="./img/23.png" width="75%" border=4></div>
+<div align="center"><img src="./img/23.png" width="100%" border=4></div>
 
 12行目のコメントの指示通りに`char Text_1[] = "Text_1";`と`char Text_2[] = "Text_2";`を変更します。文字は任意です
 
@@ -148,7 +148,7 @@ char Text_2[] = "Hello Digispark";
 
 以下の通りの表示が出てきたら、本キーボード上に[SW1]と書かれているスイッチを押しながらUSBポートに挿入してください。挿したらスイッチを話しても大丈夫です
 
-<div align="center"><img src="./img/25.JPG" width="75%" border=4></div>
+<div align="center"><img src="./img/25.JPG" width="100%" border=4></div>
 
 ボードへの書き込みが完了したら、いったん抜いて挿しなおし、メモ帳などで動作テストを行ってください。問題なく書き込めていれば[SW1]を押すと[Text_1]に設定したテキストが、[SW2]を押すと[Text_2]に設定したテキストがキーボード入力されます
 
