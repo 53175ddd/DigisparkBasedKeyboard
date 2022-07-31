@@ -34,7 +34,7 @@ void loop() {
   DigiKeyboard.delay(25);
 }
 
-void mainRutine() {
+void mainRoutine() {
  pinStat = (pinStat << 2) + (digitalRead(SW1) << 1) + digitalRead(SW2);
 
   if ((pinStat & 0b10101010) == 0b10100000){
