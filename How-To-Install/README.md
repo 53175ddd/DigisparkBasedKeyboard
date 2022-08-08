@@ -1,6 +1,6 @@
 # DigiKeyboardのファームウェア変更方法
 
-<h3><div align="right">最終更新：2022/07/31</div></h3>
+<h3><div align="right">最終更新：2022/08/09</div></h3>
 
 このドキュメントではBoothで販売中の自作キーボード、「DigiKeyboard」（DigisparkBasedKeyboard）のファームウェアを変更する方法を説明しています。長いので以後本キーボードとします  
 不明点・誤字・質問等ございましたらDMにてお寄せ下さい。こちらからどうぞ→[DMリンク](https://www.twitter.com/messages/compose?recipient_id=1358261719701721088)
@@ -8,6 +8,10 @@
 > **Note**｜**注意**  
 > **Windows 10 の使用を前提としています。その他の環境（Mac, Linux等）に関しては未検証であることをご了承ください**  
 > **Windows 11 に関しては、ほとんど同じ操作で問題ありませんが、一部異なる場合があります。必要に応じて読み替えてお進みいただけると幸いです**  
+
+**2022-08-09追記**  
+YouTubeにて導入方法の説明動画を公開しました。下のリンクからどうぞ  
+[DigiKeyboardのファームウェア更新方法説明](https://youtu.be/VGV5Y5Z--bU)
 
 ## 目次
 
