@@ -28,6 +28,10 @@ PCに接続する際は金色の端子が4本並んでいるところをUSB-A端
 ## ソフトウェア仕様
 
 `digitalRead();` 関数を用いて各スイッチの状態を取得し、一つ前のデータと比較して「押された瞬間」にそのスイッチに割り当てられている文字列を`DigiKeyboard.print();` 関数で出力します  
-PC側に`Google 日本語入力` を導入することでマルチバイト文字まで拡張することも可能です  
+PC側に`Google 日本語入力` を導入することでマルチバイト文字まで拡張することも可能です
+
+## 派生作品等
+
+- [`grub_minikeyboard`](https://github.com/takuminmin-m/grub_minikeyboard) by [@takuminmin-m](https://github.com/takuminmin-m)
 
 <div align="right"><a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a></div>
